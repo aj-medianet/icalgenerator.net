@@ -101,6 +101,16 @@ app.post('/', function (req, res) {
 
   let endDate = moment.tz(req.body.endYear + '-' + req.body.endMonth + '-' + req.body.endDay + 'T' + req.body.endHour + ':' + req.body.endMinutes, timeZone).utc().format('YYYY-MM-DD-HH-mm').split('-');
 
+  //make sure dates are valid
+  if (!moment(startDate, 'YYYY-MM-DD-HH-mm').isValid()) {
+    res.locals.err = 'Error - the start date you chose does not exist';
+    return renderICal(res);
+  }
+  if (!moment(endDate, 'YYYY-MM-DD-HH-mm').isValid()) {
+    res.locals.err = 'Error - the end date you chose does not exist';
+    return renderICal(res);
+  }
+
   //if start end date is before start date throw error
   if (moment(endDate).isBefore(startDate)) {
     //throw error
