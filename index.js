@@ -26,8 +26,6 @@ app.set('view engine', 'handlebars');
 app.set('port', 3213);
 app.use(express.static('public'));
 
-
-
 //load ical page
 app.get('/', function (req, res) {
   res.render('home');
