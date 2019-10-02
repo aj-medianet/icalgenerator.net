@@ -7,11 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andrew Joseph",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.13.2",
-    "express-handlebars": "^2.0.1",
+    "express-handlebars": "^3.1.0",
     "express-session": "^1.11.3",
     "express-zip": "^2.0.1",
     "generate-calendar-url": "^1.0.0",
