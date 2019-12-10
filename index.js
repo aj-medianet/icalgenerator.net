@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 3213);
+app.set('port', 5555);
 app.use(express.static('public'));
 
 //load ical page
